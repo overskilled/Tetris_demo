@@ -1,13 +1,14 @@
 class Board {
-
-    //reset the board at the start of each game
-    reset(){
-        this.grid = this.getEmptyBoard();
+  
+    // Reset the board when we start a new game.
+    reset() {
+      this.grid = this.getEmptyBoard();
     }
     
+    // Get matrix filled with zeros.
     getEmptyBoard() {
-        return Array.from(
-          {length: Row}, () => Array(Column).fill(0)
-        );
+      return Array.from(
+        {length: ROWS}, () => Array(COLS).fill(0)
+      );
     }
-}
+  }
