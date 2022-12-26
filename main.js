@@ -1,21 +1,21 @@
 const canvas = document.getElementById('board');
-const ctx    = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
-//calculate the size of canvas
-ctx.canvas.width    = Column * Board_size;
-ctx.canvas.height   =  Row * Board_size;
+// Calculate size of canvas from constants.
+ctx.canvas.width = COLS * BLOCK_SIZE;
+ctx.canvas.height = ROWS * BLOCK_SIZE;
 
-//scale de size of each block
-ctx.scale = (Board_size);
+// Scale blocks
+ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
+
 
 let board = new Board();
 
-function play(){
+function play() {
     board.reset();
     let piece = new Piece(ctx);
     piece.draw();
-  
+    
     board.piece = piece;
-    //console.table(board.grid);
 }
 
